@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<title>confirm</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<style>
+		#btn_showConfirm{
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			margin: 100px auto 0;
+			border-radius: 4px;
+			background-color: #428bca;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="btn_showConfirm">show a message.</div>
+	<!-- javascript -->
+	<script src="./js/confirm.min.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', function(){
+			initEvents();
+		}, false);
+		function initEvents(){
+			// btn_showConfirm
+			document.querySelector('#btn_showConfirm').addEventListener('touchend', function(){
+				showConfirm('This is a message.', function(){
+					console.log('This is a confirm callback.');
+				});
+			}, false);
+		}
+	</script>
+</body>
+</html>
